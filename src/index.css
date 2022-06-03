@@ -10,10 +10,10 @@
   --clr-grayish-blue: hsl(231, 7%, 65%);
   --clr-grayish-blue-a: hsla(231, 7%, 65%, 0.5);
   --clr-light-grayish-blue: hsl(207, 33%, 95%);
-
+  --clr-light-grayish-blue-body: hsl(207, 33%, 98%);
   --clr-white: hsl(0, 0%, 100%);
-  --clr-black: hsl(0, 0%, 0%);
 
+  /* box shadow colors */
   --clr-bs: hsla(230, 29%, 20%, 0.2);
 
   /* typography */
@@ -32,7 +32,6 @@
   --fs-normal-desktop: 1.6rem;
   --fs-nav-desktop: 1.6rem;
   --fs-h1-desktop: 6.4rem;
-  --fs-button-desktop: 1.75rem;
   --fs-CTA-desktop: 1.63rem;
 
   --fw-regular: 400;
@@ -68,6 +67,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   
   font-family: var(--ff-body);
   font-weight: var(--fw-regular);
@@ -79,9 +79,7 @@ body {
   position: relative;
   width: 37.5rem;
   /* height: 80rem; */
-  overflow: hidden;
-
-  border: 1px solid orange;
+  box-shadow: 0 0 1rem var(--clr-bs);
 }
 
 .intro::before {
@@ -103,9 +101,8 @@ body {
   }
 
   .intro {
-    /* max-width: 144rem; */
     width: 144rem;
-    /* height: 80rem; */
+    height: 80rem;
   }
 
   .intro::before {
@@ -116,7 +113,7 @@ body {
 
 /* header */
 .intro__header {
-  margin: 3.7rem 3rem 0;
+  padding: 3.7rem 3rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -129,7 +126,7 @@ body {
 
 @media (min-width: 65em) {
   .intro__header {
-    margin: 6.4rem 16rem 0 16.5rem;
+    padding: 6.4rem 16rem 0 16.5rem;
   }
   
   .header__logo {
@@ -230,6 +227,10 @@ body {
 }
 
 /* intro grid container */
+.intro__grid-container {
+  overflow: hidden;
+}
+
 @media (min-width: 65em) {
   .intro__grid-container {
     display: grid;
